@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JELU Consulting · AI Legislazione</title>
+  <meta name="description" content="Assistente AI JELU PAI per analisi legislativa italiana. Spiegazioni in linguaggio semplice, aggiornate da fonti pubbliche (Senato, Camera).">
+  <link rel="icon" href="./assets/jelu-logo-light.png" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="./assets/jelu-logo-light.png" class="brand-logo" alt="JELU Consulting Logo">
+        <div class="brand-copy">
+          <div class="brand-title">JELU Consulting</div>
+          <div class="brand-sub">PAI · Public Affairs Intelligence</div>
+        </div>
+      </div>
+
+      <div class="meta-block">
+        <div class="meta-label">Ultimo aggiornamento dati</div>
+        <div class="meta-value" id="lastUpdated">2025-10-24</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="side-panel card">
+      <div class="side-section">
+        <div class="side-title">Fonti istituzionali</div>
+        <ul class="side-list">
+          <li>Senato della Repubblica — Atti, DDL</li>
+          <li>Camera dei Deputati — Iniziative</li>
+          <li>Open Data Parlamento (SPARQL)</li>
+        </ul>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Cosa fa l'assistente</div>
+        <p class="side-text">
+          • Riassume disegni di legge in linguaggio semplice.<br/>
+          • Spiega l'impatto politico e settoriale.<br/>
+          • Contestualizza: “Perché interessa PA / imprese?”<br/>
+        </p>
+      </div>
+
+      <div class="side-section">
+        <div class="side-title">Disclaimer</div>
+        <p class="side-text small">
+          Questo strumento è consulenziale e informativo. Non costituisce parere legale.
+        </p>
+      </div>
+    </aside>
+
+    <section class="chat-area card">
+      <div class="chat-header">
+        <div>
+          <div class="chat-title">Assistente Legislazione Italia · JELU PAI</div>
+          <div class="chat-desc">
+            Fai una domanda. Esempio: “Spiegami il DDL più recente su lavoro e imprese”.
+          </div>
+        </div>
+        <div class="online-pill">ONLINE</div>
+      </div>
+
+      <div id="chatLog" class="chat-log">
+        <!-- Messaggi renderizzati qui -->
+      </div>
+
+      <form id="chatForm" class="chat-input-row">
+        <input
+          id="userInput"
+          class="chat-input"
+          placeholder="Scrivi la tua domanda sulla legislazione italiana…"
+          autocomplete="off"
+        />
+        <button class="send-btn" aria-label="Invia">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </section>
+
+    <aside class="intel-panel card">
+      <div class="intel-header">
+        <div class="intel-title">Ultimi atti parlamentari</div>
+        <div class="intel-sub">Monitor DDL Senato (feed pubblico)</div>
+      </div>
+
+      <div id="ddlFeed" class="intel-list">
+        <div class="intel-item skeleton">
+          <div class="intel-ddl">Caricamento atti in corso…</div>
+          <div class="intel-meta">—</div>
+        </div>
+      </div>
+
+      <div class="intel-footer small">
+        Fonte: feed pubblico “Ultimi Atti” del Senato della Repubblica.
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="foot-left">
+        © 2025 JELU Consulting · Divisione Public Affairs Intelligence<br/>
+        Dati istituzionali: dati.senato.it · senato.it · camera.it (licenze open data CC BY 3.0)
+      </div>
+      <div class="foot-right">
+        Prodotto dimostrativo ad uso interno · Non per diffusione esterna
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js" type="module"></script>
+</body>
+</html>
