@@ -2,7 +2,7 @@
 // AI via Hugging Face + Wikipedia + fallback rule-based
 // NOTE: token in frontend is fine for a quick demo. Revoke after use.
 
-const HF_TOKEN = "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"; // <-- incolla qui il tuo token
+const HF_TOKEN = "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"; // <-- incolla qui il tuo token
 const HF_MODEL = "it5-base"; // puoi provare: "morenolq/Italpaca-7B-Instruct" (più 'umano', più lento)
 const WIKI_SUMMARY = "https://it.wikipedia.org/api/rest_v1/page/summary/";
 
